@@ -1,8 +1,6 @@
 # JazzHr
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jazz_hr`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby interface to the [JazzHR API](http://www.resumatorapi.com/v1/).
 
 ## Installation
 
@@ -22,17 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Still fleshing this out... At the moment, a basic client can be invoked with the following:
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+  client = JazzHR::Client.new(api_key: "my-valid-api-key")
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/jazz_hr.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mconnell/jazz_hr.
 
 ## License
 
