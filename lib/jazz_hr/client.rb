@@ -10,8 +10,12 @@ module JazzHR
     end
 
     def get(path:)
-      response = Net::HTTP.get(uri_for(path: path))
-      JSON.parse(response)
+      json_string = Net::HTTP.get(uri_for(path: path))
+      response    = JSON.parse(json_string)
+
+      raise Error.new(response["error"]) if response["error"]
+
+      response
     end
 
     private
