@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.resumatorapi.com/v1/jobs/job_20191017201346_RS8OXHY7X8MA9GO8?apikey=fake-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.resumatorapi.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Oct 2019 20:36:32 GMT
+      Server:
+      - nginx
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '363'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"job_20191017201346_RS8OXHY7X8MA9GO8","team_id":"","title":"Sample
+        Job","country_id":"United Kingdom","city":"","state":"","zip":"","department":"","description":"<p><strong>Sample&nbsp;<\/strong><em>description.<\/em><\/p>","minimum_salary":"0","maximum_salary":"0","notes":"","original_open_date":"2019-10-17","type":"Seasonal","status":"Drafting","send_to_job_boards":"No
+        answer","hiring_lead":"usr_20191017145042_SMQGZJGMGYWZCK9B","board_code":"gHvkRaBteh","internal_code":"ABC-X1","questionnaire":"0","job_applicants":[]}'
+    http_version:
+  recorded_at: Thu, 17 Oct 2019 20:36:33 GMT
+recorded_with: VCR 5.0.0

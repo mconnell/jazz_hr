@@ -50,7 +50,41 @@ RSpec.describe JazzHR::Job do
 
     context "valid job id supplied" do
       it "returns a job", :vcr do
-        expect(JazzHR::Job.find(client: client, id: 'job_20191017201346_RS8OXHY7X8MA9GO8')).to be_a(JazzHR::Job)
+        expect(
+          JazzHR::Job.find(
+            client: client,
+            id: 'job_20191017201346_RS8OXHY7X8MA9GO8'
+          )
+        ).to be_a(JazzHR::Job)
+      end
+
+      it "populates the job instance with attribute data from the request", :vcr do
+          job = JazzHR::Job.find(
+            client: client,
+            id: 'job_20191017201346_RS8OXHY7X8MA9GO8'
+          )
+
+          expect(job.id).to eq('job_20191017201346_RS8OXHY7X8MA9GO8')
+          expect(job.team_id).to eq('')
+          expect(job.title).to eq('Sample Job')
+          expect(job.country_id).to eq('United Kingdom')
+          expect(job.city).to eq('')
+          expect(job.state).to eq('')
+          expect(job.zip).to eq('')
+          expect(job.department).to eq('')
+          expect(job.description).to eq('<p><strong>Sample&nbsp;</strong><em>description.</em></p>')
+          expect(job.minimum_salary).to eq('0')
+          expect(job.maximum_salary).to eq('0')
+          expect(job.notes).to eq('')
+          expect(job.original_open_date).to eq('2019-10-17')
+          expect(job.type).to eq('Seasonal')
+          expect(job.status).to eq('Drafting')
+          expect(job.send_to_job_boards).to eq('No answer')
+          expect(job.hiring_lead).to eq('usr_20191017145042_SMQGZJGMGYWZCK9B')
+          expect(job.board_code).to eq('gHvkRaBteh')
+          expect(job.internal_code).to eq('ABC-X1')
+          expect(job.questionnaire).to eq('0')
+          expect(job.job_applicants).to eq([])
       end
     end
   end

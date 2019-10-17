@@ -20,7 +20,17 @@ module JazzHR
       new(job_attributes)
     end
 
+    attr_accessor :id, :team_id, :title, :country_id, :city, :state, :zip,
+                  :department, :description, :minimum_salary, :maximum_salary,
+                  :notes, :original_open_date, :type, :status,
+                  :send_to_job_boards, :hiring_lead, :board_code,
+                  :internal_code, :questionnaire, :job_applicants
+
     def initialize(attributes)
+      attributes.each do |attribute, value|
+        self.send("#{attribute}=", value)
+      end
     end
+
   end
 end
