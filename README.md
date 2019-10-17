@@ -25,7 +25,14 @@ Or install it yourself as:
 Still fleshing this out... At the moment, a basic client can be invoked with the following:
 
 ```ruby
+  # Instanciate a client object using your JazzHR API key
   client = JazzHR::Client.new(api_key: "my-valid-api-key")
+
+  # Find a specific job by it's ID
+  JazzHR::Job.find(client: client, id: "job_id_abc123")
+
+  # Search all jobs
+  JazzHR::Job.search(client: client)
 ```
 
 ## Contributing
