@@ -4,6 +4,8 @@ Ruby interface to the [JazzHR API](http://www.resumatorapi.com/v1/).
 
 ## Installation
 
+This gem can be found on [RubyGems.org](https://rubygems.org/gems/jazz_hr)
+
 Add this line to your application's Gemfile:
 
 ```ruby
