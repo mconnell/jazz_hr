@@ -1,4 +1,4 @@
-# JazzHr
+# JazzHR
 
 Ruby interface to the [JazzHR API](http://www.resumatorapi.com/v1/).
 
