@@ -10,9 +10,9 @@ RSpec.describe JazzHR::Client do
   describe "new client instance" do
     subject(:client) { described_class.new(api_key: "fake-api-key") }
 
-    describe "#get" do
+    describe "#get", :vcr do
       context "invalid API key" do
-        it "raises a JazzHR::Error stating the key is invalid", :vcr do
+        it "raises a JazzHR::Error stating the key is invalid" do
           expect {
             client.get(client.get(path: "/jobs"))
           }.to raise_error(JazzHR::Error, "invalid api key")
@@ -20,7 +20,7 @@ RSpec.describe JazzHR::Client do
       end
 
       context "valid API key" do
-        it "successfully returns a response object from the api", :vcr do
+        it "successfully returns a response object from the api" do
           response = client.get(path: "/jobs")
           expect(response).to eq({
             "id"                 => "job_20191016193456_XGSWRU2DDZPU9Y2T",

@@ -1,9 +1,9 @@
 RSpec.describe JazzHR::Job do
   let(:client) { JazzHR::Client.new(api_key: "fake-api-key") }
 
-  describe ".search" do
+  describe ".search", :vcr do
     context "single job listing in the account" do
-      it "returns an array containing a single job instance", :vcr do
+      it "returns an array containing a single job instance" do
         jobs = JazzHR::Job.search(client: client)
         expect(jobs.first).to be_a(JazzHR::Job)
         expect(jobs.length).to eq(1)
@@ -11,21 +11,21 @@ RSpec.describe JazzHR::Job do
     end
 
     context "multiple job listings in the account" do
-      it "returns an array containing a multiple job instances", :vcr do
+      it "returns an array containing a multiple job instances" do
         jobs = JazzHR::Job.search(client: client)
         expect(jobs.length).to eq(2)
       end
     end
 
     context "zero job listings in the account" do
-      it "returns an array containing a multiple job instances", :vcr do
+      it "returns an array containing a multiple job instances" do
         jobs = JazzHR::Job.search(client: client)
         expect(jobs.length).to eq(0)
       end
     end
 
     context "invalid api key" do
-      it "raises a JazzHR::Error stating the key is invalid", :vcr do
+      it "raises a JazzHR::Error stating the key is invalid" do
         expect {
           JazzHR::Job.search(client: client)
         }.to raise_error(JazzHR::Error, "invalid api key")
@@ -33,7 +33,7 @@ RSpec.describe JazzHR::Job do
     end
   end
 
-  describe ".find" do
+  describe ".find", :vcr do
     context "no job id supplied" do
       it "raises an error" do
         expect {
@@ -43,13 +43,13 @@ RSpec.describe JazzHR::Job do
     end
 
     context "invalid job id supplied" do
-      it "returns nil", :vcr do
+      it "returns nil" do
         expect(JazzHR::Job.find(client: client, id: 'invalid')).to be_nil
       end
     end
 
     context "valid job id supplied" do
-      it "returns a job", :vcr do
+      it "returns a job" do
         expect(
           JazzHR::Job.find(
             client: client,
@@ -58,7 +58,7 @@ RSpec.describe JazzHR::Job do
         ).to be_a(JazzHR::Job)
       end
 
-      it "populates the job instance with attribute data from the request", :vcr do
+      it "populates the job instance with attribute data from the request" do
           job = JazzHR::Job.find(
             client: client,
             id: 'job_20191017201346_RS8OXHY7X8MA9GO8'
