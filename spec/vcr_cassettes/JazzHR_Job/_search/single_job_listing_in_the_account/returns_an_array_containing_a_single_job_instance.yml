@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.resumatorapi.com/v1/jobs?apikey=fake-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.resumatorapi.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Oct 2019 20:34:55 GMT
+      Server:
+      - nginx
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '452'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"job_20191016193456_XGSWRU2DDZPU9Y2T","team_id":"","title":"Sample
+        Job","country_id":"United States","city":"Pittsburgh","state":"PA","zip":"15212","department":"","description":"<p>You
+        can enter a detailed, formatted description of your position.<\/p><p>We have
+        a fully featured WYSIWYG editor which enables you to craft that perfectly
+        formatted bulleted list. So go get that new candidate!","minimum_salary":"0","maximum_salary":"0","notes":"","original_open_date":"2019-10-16","type":"Full
+        Time","status":"On Hold","send_to_job_boards":"No answer","hiring_lead":"usr_20191016193456_DWYSYV1EX9WMEFZX","board_code":"X8P7SBPn4N","internal_code":"","questionnaire":"0"}'
+    http_version:
+  recorded_at: Wed, 16 Oct 2019 20:34:55 GMT
+recorded_with: VCR 5.0.0

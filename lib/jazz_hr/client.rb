@@ -13,7 +13,7 @@ module JazzHR
       json_string = Net::HTTP.get(uri_for(path: path))
       response    = JSON.parse(json_string)
 
-      raise Error.new(response["error"]) if response["error"]
+      raise Error.new(response["error"]) if response.is_a?(Hash) && response["error"]
 
       response
     end
