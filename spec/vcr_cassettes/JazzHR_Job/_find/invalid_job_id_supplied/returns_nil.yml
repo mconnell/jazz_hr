@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.resumatorapi.com/v1/jobs/invalid?apikey=fake-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.resumatorapi.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Oct 2019 20:28:49 GMT
+      Server:
+      - nginx
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '41'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"job_applicants":[]}'
+    http_version:
+  recorded_at: Thu, 17 Oct 2019 20:28:49 GMT
+recorded_with: VCR 5.0.0
