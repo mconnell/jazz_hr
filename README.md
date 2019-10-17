@@ -28,7 +28,7 @@ Still fleshing this out... At the moment, a basic client can be invoked with the
   # Instanciate a client object using your JazzHR API key
   client = JazzHR::Client.new(api_key: "my-valid-api-key")
 
-  # Find a specific job by it's ID
+  # Find a specific job by ID
   JazzHR::Job.find(client: client, id: "job_id_abc123")
 
   # Search all jobs
